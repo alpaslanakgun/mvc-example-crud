@@ -1,0 +1,36 @@
+﻿@model Urun
+
+<h2>Yeni Ürün Ekle</h2>
+<hr />
+
+<form asp-action="Create" method="post">
+
+
+    <div>
+        <label asp-for="UrunAdi"></label>
+        <input asp-for="UrunAdi" />
+        <span asp-validation-for="UrunAdi" style="color:red;"></span>
+    </div>
+    <br />
+    <div>
+        <label asp-for="Fiyat"></label>
+        <input asp-for="Fiyat" type="number" step="0.01" />
+    </div>
+    <br />
+    <div>
+        <label asp-for="Stok"></label>
+        <input asp-for="Stok" type="number" />
+    </div>
+    <br />
+    <div>
+        <label asp-for="KategoriId">Kategori</label>
+        <select asp-for="KategoriId" asp-items="ViewBag.Kategoriler">
+            <option value="">--Kategori Seçiniz --</option>
+        </select>
+
+    </div>
+    <br />
+    <button type="submit">Ekle</button>
+    <a asp-action="Index">Geri Dön</a>
+
+</form>

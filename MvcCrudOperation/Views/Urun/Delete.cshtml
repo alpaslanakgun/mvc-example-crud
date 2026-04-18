@@ -1,0 +1,44 @@
+﻿@model Urun
+
+
+<h2>Ürün Sil</h2>
+<hr />
+<p>
+    Bu ürünü silmek istediğinizden eminmisiniz?
+</p>
+
+<table border="1" cellpadding="6">
+
+    <tr>
+        <th>Id</th>
+        <td>@Model.Id</td>
+
+    </tr>
+    <tr>
+        <th>Urun Adi</th>
+        <td>@Model.UrunAdi</td>
+
+    </tr>
+    <tr>
+        <th>Fiyat</th>
+        <td>@Model.Fiyat</td>
+
+    </tr>
+    <tr>
+        <th>Stok</th>
+        <td>@Model.Stok</td>
+
+    </tr>
+    <tr>
+        <th>Kategori</th>
+        <td>@Model.Kategori?.KategoriAdi</td>
+
+    </tr>
+
+
+</table>
+<br>
+<form asp-action="Delete"method="post">
+    <input type="hidden"  asp-for="@Model.Id" />
+    <button type="submit" style="color:Red;">Evet Sil</button>
+</form>
